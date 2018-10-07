@@ -1,8 +1,8 @@
 <Bindings>
-	<Binding name="Refresh Positions" header="MOVEANYTHING">
+	<Binding name="MOVEANYTHING_REFRESH" header="MOVEANYTHING">
 		MoveAnything_RefreshPositions();
 	</Binding>
-	<Binding name="Move frame under cursor">
+	<Binding name="MOVEANYTHING_CURSOR">
 		MoveAnything_MoveFrameUnderCursor();
 	</Binding>
 </Bindings>

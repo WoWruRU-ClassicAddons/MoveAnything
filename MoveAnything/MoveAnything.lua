@@ -38,7 +38,7 @@ MA_RIGHTARROW = ">";
 CurrentMover = 1;
 
 StaticPopupDialogs["MOVEANYTHING_RESET_CONFIRM"] = {
-	text = "Reset all MoveAnything Data?",
+	text = MOVEANYTHING_RESET_CONFIRM_TEXT,
 	button1 = TEXT(YES),
 	button2 = TEXT(NO),
 	OnAccept = function()
@@ -161,126 +161,6 @@ MoveAnything_MoveOnlyWhenVisible["GroupLootFrame1"] = true;
 MoveAnything_MoveOnlyWhenVisible["GroupLootFrame2"] = true;
 MoveAnything_MoveOnlyWhenVisible["GroupLootFrame3"] = true;
 MoveAnything_MoveOnlyWhenVisible["GroupLootFrame4"] = true;
-
-MoveAnything_DefaultFrameList = {
-
-	{ "MAOptions", "MoveAnything! Options Window" },
-
-	{ "Separator", "**** Standard Party Frames ****" },
-	{ "PlayerFrame", "Player" },
-	{ "TargetFrame", "Target" },
-	{ "PartyMemberFrame1", "Party Member 1" },
-	{ "PartyMemberFrame2", "Party Member 2" },
-	{ "PartyMemberFrame3", "Party Member 3" },
-	{ "PartyMemberFrame4", "Party Member 4" },
-
-	{ "Separator", "**** Pets ****" },
-	{ "PetFrame", "Pet" },
-	{ "PartyMemberFrame1PetFrame", "Party Pet 1" },
-	{ "PartyMemberFrame2PetFrame", "Party Pet 2" },
-	{ "PartyMemberFrame3PetFrame", "Party Pet 3" },
-	{ "PartyMemberFrame4PetFrame", "Party Pet 4" },
-
-	{ "Separator", "**** Bags ****" },
-	{ "BagFrame1", "Bag 1 (Backpack)" },
-	{ "BagFrame2", "Bag 2" },
-	{ "BagFrame3", "Bag 3" },
-	{ "BagFrame4", "Bag 4" },
-	{ "BagFrame5", "Bag 5" },
-
-	{ "Separator", "**** Bank ****" },
-	{ "BankFrame", "Bank Teller Window" },
-	{ "BankBagFrame1", "Bank Bag 1" },
-	{ "BankBagFrame2", "Bank Bag 2" },
-	{ "BankBagFrame3", "Bank Bag 3" },
-	{ "BankBagFrame4", "Bank Bag 4" },
-	{ "BankBagFrame5", "Bank Bag 5" },
-	{ "BankBagFrame6", "Bank Bag 6" },
-
-	{ "Separator", "**** Bottom Bar ****" },
-	{ "MainMenuBar", "Bottom Bar" },
-	{ "MainMenuBarArtFrame", "Art Frame" },
-	{ "MainMenuBarMaxLevelBar", "Max Level Bar" },
-	{ "MainMenuExpBar", "Experience Bar" },
-	{ "MainMenuBarPerformanceBarFrame", "Lag Meter" },
-
-	{ "Separator", "**** Action Button Bars ****" },
-	{ "BasicActionButtonsMover", "Action Buttons" },
-	{ "BasicActionButtonsVerticalMover", "Action Buttons (Vertical)" },
-	{ "PetActionButtonsMover", "Pet Action Buttons" },
-	{ "PetActionButtonsVerticalMover", "Pet Action Buttons (Vertical)" },
-	{ "ShapeshiftButtonsMover", "Stance / Aura / Shapeshift Buttons" },
-	{ "ShapeshiftButtonsVerticalMover", "Stance / Aura / Shapeshift (Vertical)" },
-
-	{ "Separator", "**** Bag and Micro Button Bars ****" },
-	{ "BagButtonsMover", "Bag Buttons" },
-	{ "BagButtonsVerticalMover", "Bag Buttons (Vertical)" },
-	{ "MicroButtonsMover", "Micro Buttons" },
-	{ "MicroButtonsVerticalMover", "Micro Buttons (Vertical)" },
-
-	{ "Separator", "**** Extra Action Bars ****" },
-	{ "MultiBarBottomLeft", "Bottom Left ActionBar" },
-	{ "MultiBarBottomRight", "Bottom Right ActionBar" },
-	{ "MultiBarRight", "Right ActionBar" },
-	{ "MultiBarLeft", "Right ActionBar 2" },
-
-	{ "Separator", "**** Minimap and Minimap Hangers ****" },
-	{ "MinimapCluster", "MiniMap" },
-	{ "MinimapZoneTextButton", "MiniMap Zone Text" },
-	{ "MinimapZoomIn", "MiniMap Zoom In Button" },
-	{ "MinimapZoomOut", "MiniMap Zoom Out Button" },
-	{ "MiniMapMailFrame", "MiniMap Mail Notification" },
-	{ "MiniMapTrackingFrame", "MiniMap Tracking" },
-	{ "MiniMapMeetingStoneFrame", "MiniMap Meeting Stone" },
-	{ "MiniMapBattlefieldFrame", "MiniMap Battlefield" },
-	{ "GameTimeFrame", "MiniMap Day-Night Clock" },
-
-	{ "Separator", "**** Battle Grounds Elements ****" },
-	{ "WorldStateAlwaysUpFrame", "Flags Frame"},
-	{ "AlwaysUpFrame1", "Alliance Flag"},
-	{ "AlwaysUpFrame2", "Horde Flag"},
-
-	{ "Separator", "**** Dice Roll Frames ****" },
-	{ "GroupLootFrame1", "Dice Roll Frame 1" },
-	{ "GroupLootFrame2", "Dice Roll Frame 2" },
-	{ "GroupLootFrame3", "Dice Roll Frame 3" },
-	{ "GroupLootFrame4", "Dice Roll Frame 4" },
-
-	{ "Separator", "**** Miscellaneous Screen Items ****" },
-	{ "StaticPopup1", "Static Popup Frame" },
-	{ "UIErrorsFrame", "UI Errors Frame" },
-	{ "CastingBarFrame", "Casting Bar" },
-	{ "BuffFrame", "Buff Window" },
-	{ "TemporaryEnchantFrame", "Item buff/Debuff Windows" },
-	{ "TooltipMover", "Tooltip" },
-	{ "FramerateMover", "Framerate" },
-	{ "DurabilityFrame", "Durability Damage Portrait" },
-	{ "QuestWatchFrame", "Quest Tracker" },
-	{ "QuestTimerFrame", "Quest Timer" },
-	{ "ComboFrame", "Rogue Combo point counter" },
-	{ "MirrorTimer1", "Breath/Fatigue Bar" },
-
-	{ "Separator", "**** General Info Panel Placement ****" },
-	{ "UIPanelMover1", "Info Panel 1" },
-	{ "UIPanelMover2", "Info Panel 2" },
-
-	{ "Separator", "**** Specific Info Panels ****" },
-	{ "CharacterFrame", "Character / Pet / Reputation / Skills" },
-	{ "TradeSkillFrame", "Trade Skills" },
-	{ "InspectFrame", "Inspect View" },
-	{ "SpellBookFrame", "Spell Book" },
-	{ "LootFrame", "Looting Window" },
-	{ "TaxiFrame", "Flight Paths" },
-	{ "QuestLogFrame", "Quest Log" },
-	{ "MerchantFrame", "Merchant Inventory" },
-	{ "TradeFrame", "Trade Window" },
-	{ "FriendsFrame", "Friends / Who / Guild / Raid" },
-	{ "MacroFrame", "Macros" },
-	{ "MailFrame", "Mailbox" },
-	{ "TalentFrame", "Talent Tree" },
-	{ "PetStableFrame", "Pet Stable" },
-	{ "AuctionFrame", "Auction House" },
-}
 
 function MoveAnything_AddPredefinedFrames( frameList )
 	for i, val in frameList do
@@ -427,7 +307,7 @@ function MoveAnything_ClearFrameOptions( frameName )
 end
 
 function MoveAnything_FindFrameOptions( frameName, why )
-	if( MoveAnything_FrameOptions == nil ) then
+	if( MoveAnything_FrameOptions[frameName] == nil ) then
 		return;
 	end
 	return MoveAnything_FrameOptions[frameName];
@@ -665,7 +545,7 @@ function MoveAnything_Move( moveFrameName, helpfulName )
 	if( MoveAnything_MoveOnlyWhenVisible[ moveFrameName ] ) then
 		local frame = getglobal( moveFrameName );
 		if( frame == nil or not frame:IsVisible() ) then
-			Error( "That window may only be moved when it is visible" );
+			Error( MA_ERROR_1 );
 			return;
 		end
 	end
@@ -673,9 +553,9 @@ function MoveAnything_Move( moveFrameName, helpfulName )
 	if( not MoveAnything_FindMAFrame( moveFrameName ) ) then
 		local frame = MoveAnything_FindAvailableFrame();
 		if( frame == nil ) then
-			Error( "You can only move "..MOVEANYTHING_MOVEATONETIME.." frames at once." );
+			Error( string.format(MA_ERROR_2, MOVEANYTHING_MOVEATONETIME) );
 		elseif( getglobal( moveFrameName ) == nil ) then
-			Error( "\""..moveFrameName.."\" is not a valid frame name." );
+			Error( string.format(MA_ERROR_3, moveFrameName) );
 		else
 			local moveFrame = getglobal( moveFrameName );
 			MoveAnything_AddFrameToMovableList( moveFrameName, helpfulName );
@@ -764,15 +644,15 @@ end
 function MA_NudgerOnUpdate()
 	-- This code is ripped from DiscordART :)
 	local obj = GetMouseFocus();
-	local text = "MouseOver: ";
+	local text = MA_MOUSEOVER..": ";
 	local label = ResizingNudgerMouseOver;
 
 	if (obj and obj ~= WorldFrame and obj:GetName()) then
 		text = text..obj:GetName();
 		if (obj:GetParent()  and obj:GetParent() ~= WorldFrame and obj:GetParent():GetName() ) then
-			text = text.."\nParent: "..obj:GetParent():GetName();
+			text = text.."\n"..MA_PARENT..": "..obj:GetParent():GetName();
 			if (obj:GetParent():GetParent() and obj:GetParent():GetParent() ~= WorldFrame and obj:GetParent():GetParent():GetName()) then
-				text = text.."\nParent's Parent: "..obj:GetParent():GetParent():GetName();
+				text = text.."\n"..MA_PARENTPARENT..": "..obj:GetParent():GetParent():GetName();
 			end
 		end
 	end
@@ -780,7 +660,7 @@ function MA_NudgerOnUpdate()
 	if ( not string.find(text, "ResizingNudger") ) then
 		label:SetText(text);
 	else
-		label:SetText("MouseOver: ");
+		label:SetText(MA_MOUSEOVER..": ");
 	end
 end
 
@@ -1606,14 +1486,14 @@ end
 SLASH_MOVEANYTHINGCOPYSETTINGS1 = "/movecopy"
 SlashCmdList["MOVEANYTHINGCOPYSETTINGS"] = function( msg )
 	if( msg == nil or string.len( msg ) == 0 ) then
-		Error( "Syntax: /movecopy ServerName PlayerName" );
-		Error( "Use /movelist to see a current list of valid settings" );
+		Error( string.format(MA_ERROR_4, "/movecopy") );
+		Error( string.format(MA_ERROR_5, "/movelist") );
 		return;
 	end
 
 	if( MoveAnything_CharacterSettings[msg] == nil ) then
-		Error( "No settings for server/character "..msg );
-		Error( "Use /movelist to see a current list of valid settings" );
+		Error( MA_ERROR_6..msg );
+		Error( string.format(MA_ERROR_5, "/movelist") );
 		return;
 	end
 
@@ -1622,7 +1502,7 @@ end
 
 SLASH_MOVEANYTHINGLISTSETTINGS1 = "/movelist"
 SlashCmdList["MOVEANYTHINGLISTSETTINGS"] = function( msg )
-	Print( "Server/Character Settings List:", 1.0, 1.0, 0.2 );
+	Print( MA_SETTINGS_LIST, 1.0, 1.0, 0.2 );
 	Print( "-------------------------------", 1.0, 1.0, 0.2 );
 	for i, val in MoveAnything_CharacterSettings do
 		local str = i;
@@ -1637,14 +1517,14 @@ SLASH_MOVEANYTHINGDELETESETTINGS1 = "/movedelete"
 SLASH_MOVEANYTHINGDELETESETTINGS2 = "/movedel"
 SlashCmdList["MOVEANYTHINGDELETESETTINGS"] = function( msg )
 	if( msg == nil or string.len( msg ) == 0 ) then
-		Error( "Syntax: /movedelete ServerName PlayerName" );
-		Error( "Use /movelist to see a current list of valid settings" );
+		Error( string.format(MA_ERROR_4, "/movedelete") );
+		Error( string.format(MA_ERROR_5, "/movelist") );
 		return;
 	end
 
 	if( MoveAnything_CharacterSettings[msg] == nil ) then
-		Error( "No settings for server/character "..msg );
-		Error( "Use /movelist to see a current list of valid settings" );
+		Error( MA_ERROR_6..msg );
+		Error( string.format(MA_ERROR_5, "/movelist") );
 		return;
 	end
 

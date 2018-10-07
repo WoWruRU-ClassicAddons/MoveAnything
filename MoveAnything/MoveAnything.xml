@@ -1,7 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+	<Script file="Localization.lua"/>
 	<Script file="MoveAnything.lua"/>
-	<Script file="MAPredefinedFrames.lua"/>
 
 	<Button name="GameMenuButtonMoveAnything" parent = "GameMenuFrame" inherits="GameMenuButtonTemplate" text="MoveAnything!">
 		<Scripts>
@@ -152,7 +152,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							t:Hide();
 						else
 							t:Show();
-						end
+							end
 					else
 						MoveAnything_StopMoving( this.tagged:GetName() );
 					end
@@ -164,7 +164,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			<OnShow>
 				MA_MoverOnShow();
 				getglobal( this:GetName().."Backdrop" ):Show();
-				getglobal( this:GetName().."BackdropMovingFrameName" ):SetText( "Moving\n"..this.helpfulName );
+				getglobal( this:GetName().."BackdropMovingFrameName" ):SetText( MA_MOVING.."\n"..this.helpfulName );
 				if( MoveAnything_NoScale[ this.tagged:GetName() ] ) then
 					getglobal( this:GetName().."Resize_TOP" ):Hide();
 					getglobal( this:GetName().."Resize_LEFT" ):Hide();
@@ -278,7 +278,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							end
 							return true;
 						else
-							Print( "You must be at the bank to move bank bags", 1.0, 0.2, 0.2 );
+							Print( MA_ERROR_0, 1.0, 0.2, 0.2 );
 							return false;
 						end
 					end
@@ -959,7 +959,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				<Anchors>
 					<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parentFrameName">
 						<Offset>
-							<AbsDimension x="4" y="0"/>
+							<AbsDimension x="20" y="0"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -973,7 +973,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				<Anchors>
 					<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="$parentMove">
 						<Offset>
-							<AbsDimension x="3" y="0"/>
+							<AbsDimension x="20" y="0"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -983,7 +983,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</CheckButton>
-			<Button name="$parentReset" inherits="UIPanelButtonTemplate" text="Reset">
+			<Button name="$parentReset" inherits="UIPanelButtonTemplate" text="RESET">
 				<Size>
 					<AbsDimension x="44" y="20"/>
 				</Size>
@@ -1007,7 +1007,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 	<Frame name="MAOptions" toplevel="true" frameStrata="DIALOG" movable="true" enableMouse="true" hidden="true" parent="UIParent">
 		<TitleRegion setAllPoints="true"/>
 		<Size>
-			<AbsDimension x="420" y="345"/>
+			<AbsDimension x="460" y="345"/>
 		</Size>
 		<Anchors>
 			<Anchor point="CENTER"/>
@@ -1046,7 +1046,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="MAOptionsFrameNameHeader" inherits="GameFontNormalSmall" text="Frame Name">
+				<FontString name="MAOptionsFrameNameHeader" inherits="GameFontNormalSmall" text="MA_FRAME_NAME">
 					<Anchors>
 						<Anchor point="TOPLEFT">
 							<Offset>
@@ -1055,7 +1055,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="MAOptionsMoveHeader" inherits="GameFontNormalSmall" text="Move">
+				<FontString name="MAOptionsMoveHeader" inherits="GameFontNormalSmall" text="MA_MOVE">
 					<Anchors>
 						<Anchor point="LEFT" relativePoint="LEFT" relativeTo="MAOptionsFrameNameHeader">
 							<Offset>
@@ -1064,11 +1064,11 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="MAOptionsHideHeader" inherits="GameFontNormalSmall" text="Hide">
+				<FontString name="MAOptionsHideHeader" inherits="GameFontNormalSmall" text="HIDE">
 					<Anchors>
 						<Anchor point="LEFT" relativePoint="LEFT" relativeTo="MAOptionsMoveHeader">
 							<Offset>
-								<AbsDimension x="40" y="0"/>
+								<AbsDimension x="70" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -1086,14 +1086,14 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						getglobal(this:GetName().."Text"):SetText("Character Specific Settings");
+						getglobal(this:GetName().."Text"):SetText(MA_SPECIFIC_SETTINGS);
 					</OnLoad>
 					<OnClick>
 						MoveAnything_OnCheckCharacterSpecific( this );
 					</OnClick>
 				</Scripts>
 			</CheckButton>
-			<Button name="MAOptionsResetAll" inherits="MAOptionsButtonTemplate" text="Reset All">
+			<Button name="MAOptionsResetAll" inherits="MAOptionsButtonTemplate" text="MA_RESEL_ALL">
 				<Anchors>
 					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
 						<Offset>
@@ -1108,7 +1108,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="MAOptionsClose" inherits="MAOptionsButtonTemplate" text="Close">
+			<Button name="MAOptionsClose" inherits="MAOptionsButtonTemplate" text="CLOSE">
 				<Anchors>
 					<Anchor point="RIGHT" relativePoint="LEFT" relativeTo="MAOptionsResetAll">
 						<Offset>
@@ -1213,9 +1213,9 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</Anchor>
 				</Anchors>
 			</Frame>
-			<ScrollFrame name="MAScrollFrame" inherits="FauxScrollFrameTemplate">
+			<ScrollFrame name="MAScrollFrame" parent = "MAOptions" inherits="FauxScrollFrameTemplate">
 				<Size>
-					<AbsDimension x="20" y="251"/>
+					<AbsDimension x="380" y="251"/>
 				</Size>
 				<Anchors>
 					<Anchor point="TOPRIGHT">
@@ -1298,7 +1298,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 	</Button>
 	<Button name="ResizingNudger" hidden="true" parent="UIParent" movable="true">
 		<Size>
-			<AbsDimension x="200" y="175"/>
+			<AbsDimension x="250" y="175"/>
 		</Size>
 		<Anchors>
 			<Anchor point="TOP" relativeTo="MAOptions" relativePoint="BOTTOM">
@@ -1338,7 +1338,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			<Button name="$parent_NudgeUp" inherits="MA_NudgeButton">
 				<Anchors>
 					<Anchor point="CENTER">
-						<Offset><AbsDimension x="0" y="24"/></Offset>
+						<Offset><AbsDimension x="50" y="24"/></Offset>
 					</Anchor>
 				</Anchors>
 				<Scripts>
@@ -1358,7 +1358,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetText("C");
+						this:SetText(MA_C);
 						this:RegisterForClicks("LeftButtonUp", "RightButtonUp", "MiddleButtonUp");
 					</OnLoad>
 					<OnClick>
@@ -1409,7 +1409,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Scripts>
 			</Button>
 			<Button name="$parent_CenterH" inherits="UIPanelButtonTemplate" hidden="false">
-				<Size><AbsDimension x="32" y="24"/></Size>
+				<Size><AbsDimension x="100" y="24"/></Size>
 				<Anchors>
 					<Anchor point="RIGHT" relativeTo="$parent_NudgeLeft" relativePoint="LEFT">
 						<Offset><AbsDimension x="-10" y="0"/></Offset>
@@ -1417,7 +1417,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetText("C-H");
+						this:SetText(MA_CH);
 						this:RegisterForClicks("LeftButtonUp", "RightButtonUp", "MiddleButtonUp");
 					</OnLoad>
 					<OnClick>
@@ -1426,7 +1426,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Scripts>
 			</Button>
 			<Button name="$parent_CenterV" inherits="UIPanelButtonTemplate" hidden="false">
-				<Size><AbsDimension x="32" y="24"/></Size>
+				<Size><AbsDimension x="100" y="24"/></Size>
 				<Anchors>
 					<Anchor point="TOP" relativeTo="$parent_CenterH" relativePoint="BOTTOM">
 						<Offset><AbsDimension x="0" y="2"/></Offset>
@@ -1434,7 +1434,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetText("C-V");
+						this:SetText(MA_CV);
 						this:RegisterForClicks("LeftButtonUp", "RightButtonUp", "MiddleButtonUp");
 					</OnLoad>
 					<OnClick>
